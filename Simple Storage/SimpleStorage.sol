@@ -17,6 +17,14 @@ contract SimpleStorage {
     function store(uint256 _favoriteNumber) public {
         favoriteNumber = _favoriteNumber;
     }
+
+    // view, pure
+    // Both disallow modification of state
+    // pure disallow reading from state or storage
+    // view or pure function only cost gas when a gas cost transaction is calling
+    function retrieve() public view returns(uint256) {
+        return favoriteNumber;
+    }
 }
 
 // Notes
