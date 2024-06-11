@@ -12,10 +12,26 @@ contract SimpleStorage {
     // address myAddress = 0x5B38Da6a701c568545dCfcB03FcB875f56beddC4;
     // bytes32 favoriteBytes32 = "cat";
 
-    uint256 public favoriteNumber;     // By default is 0 if not value is given
+    uint256 myfavoriteNumber;     // By default is 0 if not value is given
     
+    // uint256[] listofFavoriteNumbers;
+
+    struct Person {
+        uint256 favoriteNumber;
+        string name;
+    }
+
+    // Dynamic array
+    Person[] public listOfPeople;       // By default is []
+
+    // Static array
+    // Person[3] public listOfPeople;
+
+    // Person public myFriend = Person(7, "Joe");
+    // Person public myFriend = Person({ favoriteNumber: 7, name: "Joe" });
+
     function store(uint256 _favoriteNumber) public {
-        favoriteNumber = _favoriteNumber;
+        myfavoriteNumber = _favoriteNumber;
     }
 
     // view, pure
@@ -23,7 +39,12 @@ contract SimpleStorage {
     // pure disallow reading from state or storage
     // view or pure function only cost gas when a gas cost transaction is calling
     function retrieve() public view returns(uint256) {
-        return favoriteNumber;
+        return myfavoriteNumber;
+    }
+
+    function addPerson(string memory _name, uint256 _favoriteNumber) public {
+        // Person memory myFriend = Person(_favoriteNumber, _name);
+        listOfPeople.push( Person(_favoriteNumber, _name));
     }
 }
 
