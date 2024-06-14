@@ -42,6 +42,13 @@ contract SimpleStorage {
         return myfavoriteNumber;
     }
 
+    // calldata, memory, storage
+    // calldata and memory are temporary variables
+    // String is a special type in soldity
+    // Difference between calldata and memory is that memory variable can be change
+    // calldata is temporary variables that cannot be modified
+    // memory is temporary variables that can be modified
+    // storage is permanent variables that can be modified
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         // Person memory myFriend = Person(_favoriteNumber, _name);
         listOfPeople.push( Person(_favoriteNumber, _name));
@@ -57,3 +64,7 @@ contract SimpleStorage {
 // - int can be positive or negative number
 // - Visibility for variables default to internal
 // - Everything on EVM chains is public data
+// - State Variables are converted to a storage variable
+// - Arrays, structs, or mapping are considered special types in solidity
+// - uint256 is known as a primitive type
+// - String is an array of bytes
