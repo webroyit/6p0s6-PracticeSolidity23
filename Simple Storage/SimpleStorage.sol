@@ -24,6 +24,9 @@ contract SimpleStorage {
     // Dynamic array
     Person[] public listOfPeople;       // By default is []
 
+    // ex - Ben -> 123
+    mapping(string => uint256) public nameToFavoriteNumber;
+
     // Static array
     // Person[3] public listOfPeople;
 
@@ -52,6 +55,8 @@ contract SimpleStorage {
     function addPerson(string memory _name, uint256 _favoriteNumber) public {
         // Person memory myFriend = Person(_favoriteNumber, _name);
         listOfPeople.push( Person(_favoriteNumber, _name));
+
+        nameToFavoriteNumber[_name] = _favoriteNumber;
     }
 }
 
@@ -68,3 +73,4 @@ contract SimpleStorage {
 // - Arrays, structs, or mapping are considered special types in solidity
 // - uint256 is known as a primitive type
 // - String is an array of bytes
+// - mapping (dictionary) a set of keys with each key returning a special set of information about about that key
