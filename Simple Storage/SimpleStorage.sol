@@ -60,6 +60,9 @@ contract SimpleStorage {
     }
 }
 
+contract SimpleStorage2 {}
+contract SimpleStorage3 {}
+
 // Notes
 // --------------
 // - It is recommended to add SPDX-License
