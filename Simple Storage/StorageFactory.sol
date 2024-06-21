@@ -6,11 +6,14 @@ import {SimpleStorage} from "/SimpleStorage.sol";
 
 contract StorageFactory {
     // type visibility name
-    SimpleStorage public simpleStorage;
+    // SimpleStorage public simpleStorage;
+
+    SimpleStorage[] public listOfSimpleStorageContracts;
 
     function createSimpleStorageContract() public {
         // 'new' tell solidity to deploy a contract 
-        simpleStorage = new SimpleStorage();
+        SimpleStorage newSimpleStorageContract = new SimpleStorage();
+        listOfSimpleStorageContracts.push((newSimpleStorageContract);)
     }
 }
 
