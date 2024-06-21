@@ -15,8 +15,16 @@ contract StorageFactory {
         SimpleStorage newSimpleStorageContract = new SimpleStorage();
         listOfSimpleStorageContracts.push((newSimpleStorageContract);)
     }
+
+    function sfStore(uint256 _simpleStorageIndex, uint256 _newSimpleStorageNumber) public {
+        // Address
+        // ABI - Application Binary Interface
+        SimpleStorage mySimpleStorage = listOfSimpleStorageContracts[_simpleStorageIndex];
+        mySimpleStorage.store(_newSimpleStorageNumber);
+    }
 }
 
 // Notes
 // --------------
 // - Solidity is case sensitive
+// - When we compile contract, we automatically get the ABI
