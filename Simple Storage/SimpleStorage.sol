@@ -33,7 +33,8 @@ contract SimpleStorage {
     // Person public myFriend = Person(7, "Joe");
     // Person public myFriend = Person({ favoriteNumber: 7, name: "Joe" });
 
-    function store(uint256 _favoriteNumber) public {
+    // Adding virtual keyword makes this function overrideable
+    function store(uint256 _favoriteNumber) public virtual {
         myfavoriteNumber = _favoriteNumber;
     }
 
