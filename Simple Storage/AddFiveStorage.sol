@@ -5,5 +5,7 @@ import {SimpleStorage} from "./SimpleStorage.sol";
 
 // Inheritance everything from SimpleStorage
 contract AddFiveStorage is SimpleStorage {
-
+    function sayHello() public pure returns(string memory) {
+        return "Hello";
+    }
 }
